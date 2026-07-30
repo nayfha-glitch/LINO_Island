@@ -20,7 +20,7 @@ public class player_controller : MonoBehaviour
         Vector2 movement = new Vector2(moveX, moveY).normalized;
         
         // 3. تحريك الشخصية باستخدام الفيزياء بدلاً من التحريك العادي لكي تحترم الجدران
-        rb.velocity = movement * speed;
+        rb.linearVelocity = movement * speed;
 
         if (movement != Vector2.zero)
         {
