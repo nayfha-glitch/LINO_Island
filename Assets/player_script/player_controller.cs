@@ -4,12 +4,12 @@ public class player_controller : MonoBehaviour
 {
     public float speed = 5f;
     private Animator anim;
-    private Rigidbody2D rb; // 1. أضفنا مكون الفيزياء
+    private Rigidbody2D rb; 
 
     void Start()
     {
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>(); // 2. ربطنا مكون الفيزياء
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -19,7 +19,6 @@ public class player_controller : MonoBehaviour
 
         Vector2 movement = new Vector2(moveX, moveY).normalized;
         
-        // 3. تحريك الشخصية باستخدام الفيزياء بدلاً من التحريك العادي لكي تحترم الجدران
         rb.linearVelocity = movement * speed;
 
         if (movement != Vector2.zero)
