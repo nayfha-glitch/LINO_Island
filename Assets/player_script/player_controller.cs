@@ -33,4 +33,12 @@ public class player_controller : MonoBehaviour
             anim.SetBool("isMoving", false);
         }
     }
+    // 4. إضافة دالة OnTriggerEnter2D للكشف عن الاصطدام مع الأعداء
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("enemy"))
+        {
+            Debug.Log("Player Entered A Battle Zone! Battle Begins!");
+        }
+    }
 }
