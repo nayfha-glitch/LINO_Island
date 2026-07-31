@@ -17,7 +17,7 @@ public class player_controller : MonoBehaviour
         rb.freezeRotation = true;
     }
 
-    void Update()
+    public void HandleUpdate()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
@@ -25,6 +25,7 @@ public class player_controller : MonoBehaviour
         Vector2 movement = new Vector2(moveX, moveY).normalized;
 
         // تحريك اللاعب
+        
         rb.linearVelocity = movement * speed;
 
         // الأنيميشن
