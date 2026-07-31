@@ -12,7 +12,7 @@ public class player_controller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>(); // 2. ربطنا مكون الفيزياء
     }
 
-    void Update()
+    public void HandleUpdate()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
