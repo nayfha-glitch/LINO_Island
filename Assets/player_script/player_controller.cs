@@ -3,29 +3,36 @@ using UnityEngine;
 public class player_controller : MonoBehaviour
 {
     public float speed = 5f;
+
     private Animator anim;
-    private Rigidbody2D rb; // 1. أضفنا مكون الفيزياء
+    private Rigidbody2D rb;
 
     void Start()
     {
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>(); // 2. ربطنا مكون الفيزياء
+        rb = GetComponent<Rigidbody2D>();
+
+        // إعدادات الفيزياء
+        rb.gravityScale = 0;
+        rb.freezeRotation = true;
     }
 
-    void Update()
+    public void HandleUpdate()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
         Vector2 movement = new Vector2(moveX, moveY).normalized;
+
+        // تحريك اللاعب
         
-        // 3. تحريك الشخصية باستخدام الفيزياء بدلاً من التحريك العادي لكي تحترم الجدران
         rb.linearVelocity = movement * speed;
 
+        // الأنيميشن
         if (movement != Vector2.zero)
         {
-            anim.SetFloat("moveX", moveX);
-            anim.SetFloat("moveY", moveY);
+            anim.SetFloat("moveX", movement.x);
+            anim.SetFloat("moveY", movement.y);
             anim.SetBool("isMoving", true);
         }
         else
