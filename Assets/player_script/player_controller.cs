@@ -35,10 +35,17 @@ public class player_controller : MonoBehaviour
     }
     // 4. إضافة دالة OnTriggerEnter2D للكشف عن الاصطدام مع الأعداء
     private void OnTriggerEnter2D(Collider2D other)
+{
+    if (other.CompareTag("enemy"))
     {
-        if (other.CompareTag("enemy"))
+        Debug.Log("Player Entered A Battle Zone! Battle Begins!");
+
+        // البحث عن سكربت SimpleBattle وتفعيل شاشة القتال تلقائياً
+        SimpleBattle battleSystem = FindAnyObjectByType<SimpleBattle>();
+        if (battleSystem != null && battleSystem.battlePanel != null)
         {
-            Debug.Log("Player Entered A Battle Zone! Battle Begins!");
+            battleSystem.battlePanel.SetActive(true);
         }
     }
+}
 }
