@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -11,9 +12,9 @@ TagManager:
   - 
   - Water
   - UI
-  - Solid Objects
-  - Interactable
   - 
+  - 
+  - BattleZone
   - 
   - 
   - 
@@ -40,12 +41,6 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Foreground
-    uniqueID: 1434752455
-    locked: 0
-  - name: Character
-    uniqueID: 608146083
     locked: 0
   m_RenderingLayers:
   - Default
