@@ -17,7 +17,7 @@ public class player_controller : MonoBehaviour
         rb.freezeRotation = true;
     }
 
-    public void HandleUpdate()
+    void Update()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
